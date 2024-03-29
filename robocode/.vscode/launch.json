@@ -1,0 +1,24 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java", 
+			"name": "Robocode", 
+			"request": "launch", 
+			"mainClass": "robocode.Robocode", 
+			"vmArgs": [
+				"-Xmx512M", 
+				"-Djava.security.manager=allow", 
+				"-Dsun.io.useCanonCaches=false", 
+				"-Ddebug=true", 
+				"--add-opens=java.base/sun.net.www.protocol.jar=ALL-UNNAMED", 
+				"--add-opens=java.base/java.lang.reflect=ALL-UNNAMED", 
+				"--add-opens=java.desktop/sun.awt=ALL-UNNAMED"
+			], 
+			"env": {
+				"JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\", 
+				"PATH": "${PATH}:${JAVA_HOME}/bin"
+			}
+		}
+	]
+}

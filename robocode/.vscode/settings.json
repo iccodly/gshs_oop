@@ -1,0 +1,7 @@
+{
+	"java.project.sourcePaths": ["robots"],
+	"java.project.outputPath": "robotclasses",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar", "libs/**/*.jar"
+	]
+}
