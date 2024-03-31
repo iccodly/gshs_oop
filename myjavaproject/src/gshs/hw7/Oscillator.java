@@ -1,4 +1,4 @@
-package com.gshs.hw7;
+package hw7;
 
 import robocode.*;
 

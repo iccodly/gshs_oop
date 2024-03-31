@@ -1,4 +1,4 @@
-package gshs.hw9;
+package hw9;
 
 public class Employee {
 	public String name;

@@ -1,4 +1,4 @@
-package com.gshs.hw10;
+package hw10;
 
 import robocode.*;
 import java.lang.Math;

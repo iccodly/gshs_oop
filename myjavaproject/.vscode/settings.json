@@ -1,10 +1,9 @@
 {
 	"java.project.sourcePaths": [
-		"src"
+		"src/gshs"
 	],
 	"java.project.outputPath": "bin",
 	"java.project.referencedLibraries": [
-		"lib/**/*.jar",
-		"C:/robocode/libs/*.jar"
+		"lib/**/*.jar", "libs/**/*.jar"
 	]
 }

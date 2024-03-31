@@ -1,4 +1,4 @@
-package gshs.hw9;
+package hw9;
 
 public class Manager extends Employee {
 	String JobOfManager;

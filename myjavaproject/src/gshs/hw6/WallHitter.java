@@ -1,4 +1,4 @@
-package com.gshs.hw6;
+package hw6;
 
 import java.text.NumberFormat;
 

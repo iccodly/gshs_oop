@@ -1,4 +1,4 @@
-package gshs.hw9;
+package hw9;
 
 public class OverridingTest {
 	public static void main(String[] args) {
