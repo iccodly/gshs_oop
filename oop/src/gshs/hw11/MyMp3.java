@@ -1,20 +1,20 @@
 package hw11;
 
-public class Mp3 {
+public class MyMp3 {
 	private String comp;
 	private String size;
 
-	public Mp3(String comp, String size) {
+	public MyMp3(String comp, String size) {
 		this.comp = comp;
 		this.size = size;
 	}
 
-	public Mp3(String comp) {
+	public MyMp3(String comp) {
 		this.comp = comp;
 		this.size = new String("2GB");
 	}
 
-	public Mp3() {
+	public MyMp3() {
 		this.comp = new String("아이팟");
 		this.size = new String("2GB");
 	}
@@ -37,14 +37,5 @@ public class Mp3 {
 
 	public void print() {
 		System.out.println("제조회사명 : " + getComp() + " 메모리용량 : " + getSize());
-	}
-
-	public static void main(String[] args) {
-		Mp3 mp3_1 = new Mp3("아이리버", "4GB");
-		Mp3 mp3_2 = new Mp3("삼성");
-		Mp3 mp3_3 = new Mp3();
-		mp3_1.print();
-		mp3_2.print();
-		mp3_3.print();
 	}
 }

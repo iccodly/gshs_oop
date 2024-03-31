@@ -1,9 +1,9 @@
 package hw9;
 
-public class Manager extends Employee {
+public class MyManager extends MyEmployee {
 	String JobOfManager;
 
-	public Manager(String name, int age, String JobOfManager) {
+	public MyManager(String name, int age, String JobOfManager) {
 		super(name, age);
 		this.JobOfManager = JobOfManager;
 	}

@@ -1,26 +1,26 @@
 package hw11;
 
-public class Product {
+public class MyProduct {
 	private String name;
 	private int price;
 
-	public Product() {
-		this.name = new String("물");
+	public MyProduct(String name, int price) {
+		this.name  = name;
+		this.price = price;
+	}
+
+	public MyProduct() {
+		this.name  = new String("물");
 		this.price = 800;
 	}
 
-	public Product(String name, int price) {
-		this.name = name;
+	public MyProduct(int price) {
+		this.name  = new String("물");
 		this.price = price;
 	}
 
-	public Product(int price) {
-		this.name = new String("물");
-		this.price = price;
-	}
-
-	public Product(String name) {
-		this.name = name;
+	public MyProduct(String name) {
+		this.name  = name;
 		this.price = 800;
 	}
 

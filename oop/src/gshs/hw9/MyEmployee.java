@@ -1,10 +1,10 @@
 package hw9;
 
-public class Employee {
+public class MyEmployee {
 	public String name;
 	public int age;
 
-	public Employee(String name, int age) {
+	public MyEmployee(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
