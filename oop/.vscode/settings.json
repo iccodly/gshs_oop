@@ -1,0 +1,9 @@
+{
+	"java.project.sourcePaths": [
+		"src/gshs"
+	],
+	"java.project.outputPath": "bin",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar"
+	]
+}

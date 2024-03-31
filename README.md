@@ -5,4 +5,6 @@
 
 앞에 "My"가 붙은 파일은 내가 만든 코드
 
+myjavaproject - src - gshs에 코드 있음
+
 \[감사합니다\]
