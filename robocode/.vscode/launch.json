@@ -14,11 +14,7 @@
 				"--add-opens=java.base/sun.net.www.protocol.jar=ALL-UNNAMED", 
 				"--add-opens=java.base/java.lang.reflect=ALL-UNNAMED", 
 				"--add-opens=java.desktop/sun.awt=ALL-UNNAMED"
-			],
-			"env": {
-				"JAVA_HOME": "C:/Program Files/Eclipse Adoptium/jdk-17.0.10.7-hotspot/", 
-				"PATH": "${PATH}:${JAVA_HOME}/bin"
-			}
+			]
 		}
 	]
 }

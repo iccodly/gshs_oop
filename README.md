@@ -5,6 +5,6 @@
 
 앞에 "My"가 붙은 파일은 내가 만든 코드
 
-myjavaproject - src - gshs에 코드 있음
+oop: 자바 과제
 
-\[감사합니다\]
+robocode: 로보코드 과제
