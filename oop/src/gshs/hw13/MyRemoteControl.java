@@ -4,17 +4,11 @@ public interface MyRemoteControl {
 	public static final int MAX_VOLUME = 100;
 	public static final int MIN_VOLUME = 0;
 
-	default void turnOn() {
-		System.out.println("turn ON");
-	}
+	public void turnOn();
 
-	default void turnOff() {
-		System.out.println("turn OFF");
-	}
+	public void turnOff();
 
-	default void setVolume(int volume) {
-		return;
-	}
+	public void setVolume(int volume);
 
 	default void setMute(boolean mute) {
 		if (mute == true) {
