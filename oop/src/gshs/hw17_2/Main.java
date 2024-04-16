@@ -18,7 +18,9 @@ public class Main {
 
 		System.out.println("\n***********카카오은행 연동 성공!!***************\n");
 
-		// 카카오뱅크 클래스는 Bank 인터페이스를 구현해야 하는데, abstract 메소드를 구현하지 않았기 때문에 오류가 발생합니다.
+		// KakaoBank 클래스는 Bank 인터페이스를 구현해야 합니다.
+		// 그런데 kakaoWithDraw 메소드와 kakaoDeposit 메소드를 사용하였으므로 Bank 인터페이스의 추상 메소드를 구현하지 않았습니다.
+		// 따라서 오류가 발생합니다.
 		bank = new KakaoBank();
 		bank.withDraw(100);
 		bank.deposit(100);

@@ -20,7 +20,7 @@ public class EnemyBot extends AdvancedRobot {
 		this.distance = 0.0;
 		this.energy   = 0.0;
 		this.heading  = 0.0;
-		this.name     = new String("");
+		this.name     = "";
 		this.velocity = 0.0;
 	}
 

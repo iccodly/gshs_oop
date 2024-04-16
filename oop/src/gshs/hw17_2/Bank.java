@@ -10,7 +10,7 @@ public interface Bank {
 	default String findDormancyAccount(String custId) {
 		System.out.println("**금융개정법안 00이후 고객의 휴면계좌 찾아주기 운동**");
 		System.out.println("**금융결제원에서 제공하는 로직**");
-		return "00dmsgod 000-000-0000-00";
+		return "00은행 000-000-0000-00";
 	}
 
 	static void BCAuth(String bankName) {

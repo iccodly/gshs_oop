@@ -19,7 +19,7 @@ public class SHBank implements Bank {
 
 	@Override
 	public String findDormancyAccount(String custId) {
-		System.out.println("**금융개정법안 00이후 고객으이 휴면계좌 찾아주기 운동**");
+		System.out.println("**금융개정법안 00이후 고객의 휴면계좌 찾아주기 운동**");
 		System.out.println("**SH은행만의 로직 적용**");
 		return "00은행 000-000-0000-00";
 	}

@@ -1,4 +1,4 @@
-package hw14;
+package hw15;
 
 import robocode.*;
 
@@ -8,7 +8,10 @@ public class Gshs_22077 extends AdvancedRobot {
 	private EnemyBot[] enemies = new EnemyBot[10];
 
 	public void run() {
+		// divorce radar movement from gun movement
 		setAdjustRadarForGunTurn(true);
+		// divorce gun movement from tank movement
+		setAdjustGunForRobotTurn(true);
 		id = -1;
 		cnt = 0;
 		for (int i = 0; i < 10; i++) {
@@ -56,8 +59,10 @@ public class Gshs_22077 extends AdvancedRobot {
 				id = i;
 				System.out.println("Enemy is changed: " + enemies[id].getName());
 				System.out.println("Distance: " + enemies[id].getDistance());
-				// turn toward the enemy, a la BearingBot
-				setTurnRight(enemies[id].getBearing());
+				// turn toward the enemy
+				double turn = getHeading() - getGunHeading() + enemies[id].getBearing();
+				// normalize the turn to take the shortest path there
+				setTurnGunRight(normalizeBearing(turn));
 			}
 		}
 	}
@@ -68,9 +73,11 @@ public class Gshs_22077 extends AdvancedRobot {
 			if (enemies[i].getName().equals(e.getName())) {
 				System.out.println("Enemy is erased: " + enemies[i].getName());
 				enemies[i].reset();
+				if (i == id) {
+					id = -1;
+				}
 			}
 		}
-		id = -1;
 	}
 
 	void doScanner() {
@@ -101,18 +108,20 @@ public class Gshs_22077 extends AdvancedRobot {
 		// turning here causes a weird behavior, prolly because we're working
 		// with outdated information
 		// setTurnRight(enemy.getBearing());
-		if (id == -1) {
-			setAhead(20);
-			setTurnRight(15);
-		} else if (enemies[id].getDistance() > 200) {
-			// move a little closer
-			setAhead(enemies[id].getDistance() / 2);
-		} else if (enemies[id].getDistance() < 100) {
-			// but not too close
-			setBack(enemies[id].getDistance() + 30);
-		} else {
-			setBack(10);
-		}
+		// if (id == -1) {
+		// 	setAhead(20);
+		// 	setTurnRight(15);
+		// } else if (enemies[id].getDistance() > 200) {
+		// 	// move a little closer
+		// 	setAhead(enemies[id].getDistance() / 2);
+		// } else if (enemies[id].getDistance() < 100) {
+		// 	// but not too close
+		// 	setBack(enemies[id].getDistance() + 30);
+		// } else {
+		// 	setBack(10);
+		// }
+		setAhead(20);
+		setTurnRight(5);
 	}
 
 	void doGun() {
@@ -120,18 +129,13 @@ public class Gshs_22077 extends AdvancedRobot {
 		if (id == -1 || enemies[id].none()) {
 			return;
 		}
-		// convenience variable
-		double max = Math.max(getBattleFieldHeight(),
-				getBattleFieldWidth());
+		// // convenience variable
+		// double max = Math.max(getBattleFieldHeight(),
+		// 		getBattleFieldWidth());
 		// only shoot if we're (close to) pointing at our enemy
-		if (Math.abs(getTurnRemaining()) < 10) {
-			if (enemies[id].getDistance() < max / 3) {
-				// fire hard when close
-				setFire(3);
-			} else {
-				// otherwise, just plink him
-				setFire(1);
-			}
+		if (getGunHeat() == 0 && Math.abs(getTurnRemaining()) < 10) {
+			// shoot
+			setFire(Math.min(400 / enemies[id].getDistance(), 3));
 		}
 	}
 
@@ -140,5 +144,16 @@ public class Gshs_22077 extends AdvancedRobot {
 			enemies[i].reset();
 		}
 		id = -1;
+	}
+
+	// normalizes a bearing to between +180 and -180
+	double normalizeBearing(double angle) {
+		while (angle > 180) {
+			angle -= 360;
+		}
+		while (angle < -180) {
+			angle += 360;
+		}
+		return angle;
 	}
 }
