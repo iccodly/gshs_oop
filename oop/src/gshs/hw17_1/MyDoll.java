@@ -1,6 +1,6 @@
 package hw17_1;
 
-public class Doll {
+public class MyDoll {
 	public String toString() {
 		return "Doll";
 	}

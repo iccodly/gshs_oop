@@ -1,6 +1,6 @@
 package hw17_2;
 
-public class KakaoBank implements Bank {
+public class MyKakaoBank implements Bank {
 	@Override
 	public void withDraw(int price) {
 		System.out.print("Kakao은행만의 인출 로직... ");

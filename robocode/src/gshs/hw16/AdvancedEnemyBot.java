@@ -20,7 +20,7 @@ public class AdvancedEnemyBot extends EnemyBot {
 
 	public void update(ScannedRobotEvent e, Robot robot) {
 		super.update(e);
-		// 로봇이 보고 있는 위치와 로봇이 보는 방향을 기준으로 측정한 적 로봇의 각도는, 지도상에서의 각도와 같다
+		// 로봇이 보고 있는 위치와 로봇이 보는 방향을 기준으로 측정한 적 로봇의 각도의 합은, 지도상에서의 절대적인 각도와 같다
 		double absBearingDeg = (robot.getHeading() + e.getBearing());
 		if (absBearingDeg < 0) {
 			absBearingDeg += 360;
